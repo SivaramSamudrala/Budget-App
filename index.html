@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDGET APP</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <!-- create a header -->
+    <h2 class="budgetapp-header">BUDGET APP</h2>
+    <!-- create a wrapper -->
+    <div class="wrapper">
+
+        <!-- create a container -->
+        <div class="container">
+            <!-- create a budget container -->
+            <div class="budget-container">
+                <h4 class="budget-header">Please Enter Your Budget</h4>
+                <input type="number" class="budget-input" id="budget-input">
+                <br>
+                <button class="budget-button" id="budget-button" onclick="addbudget()">Add Budget</button>
+            </div>
+            <!-- create a expense container -->
+            <div class="expense-container">
+                <h4 class="expenses-header-1">Please Enter Your Expenses</h4>
+                <input type="text" class="expenses-input-1" id="expenses-input-1">
+                <h4 class="expense-header-2">Please Enter Expenses Amount</h4>
+                <input type="number" class="expenses-input-2" id="expenses-input-2">
+                <br>
+                <button class="expenses-button" id="expenses-button" onclick="addexpenses()">Add Expenses</button>
+
+            </div>
+
+            <!-- total budget -->
+
+            <div class="total-budget-container">
+
+                <div class="total-budget">
+                    <h4>Total Budget</h4>
+                    <p id="i1">0</p>
+                    <span id="total-budget"></span>
+                </div>
+
+                <div class="total-expenses">
+                    <h4>Total Expenses</h4>
+                    <span id="total-expenses">0</span>
+                </div>
+
+
+                <div class="total-balance">
+                    <h4>Balance</h4>
+                    <span id="balance">0</span>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <h3>Expenses Lists:</h3>
+                <br>
+                <br>
+
+                <div class="ul-list" id="ul-list">
+                    <ul id="h1">
+                        <!-- <li id="h1"></li> -->
+                        <!-- <li id="h2"></li> -->
+                      
+                      
+
+                     
+                    </ul>
+                </div>
+
+                <div class="ul-list" id="ul-list">
+                    <ul id="h2">
+                        <!-- <li id="h1"></li> -->
+                        <!-- <li id="h2"></li> -->
+                      
+                      
+
+                     
+                    </ul>
+                </div>
+                
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+    
+        // budget variables
+        var num1 = document.getElementById("budget-input");
+        // expenses variables
+        var num2 = document.getElementById("expenses-input-2");
+        // expenses name
+        var expname = document.getElementById("expenses-input-1");
+        // expense amount 
+        var expamount = document.getElementById("expenses-input-2");
+
+    function addbudget(){
+        document.getElementById("i1").innerHTML = num1.value;
+        var bal = num1.value;
+        document.getElementById("balance").innerHTML = bal;
+    }
+
+    function addexpenses(){
+        document.getElementById("total-expenses").innerHTML = num2.value;
+        var bal = num1.value-num2.value;
+        num1.value = bal;
+        document.getElementById("balance").innerHTML = bal;
+        document.getElementById("h1").innerHTML = expname.value;
+        document.getElementById("h2").innerHTML = expamount.value;
+        
+
+      
+
+    }
+
+</script>
+</body>
+
+</html>
